@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portfolio von Bahri – Angehender Fachinformatiker für Anwendungsentwicklung">
   <meta property="og:title" content="Bahri Portfolio">
-  <meta property="og:description" content="Angehender Anwendungsentwickler mit Leidenschaft für sauberen Code.">
+  <meta property="og:description" content="Angehender Anwendungsentwickler mit Leidenschaft für modernen, sauberen Code.">
   <title>Bahri Portfolio</title>
   <!-- TailwindCSS & AOS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -15,56 +15,77 @@
       theme: {
         extend: {
           colors: {
-            anthracite: '#2e2e2e',
-            accent1: '#6366f1',
-            accent2: '#10b981',
-            accent3: '#fbbf24'
+            anthracite: '#171717',
+            accent1: '#00FF94',
+            accent2: '#FF0040',
+            accent3: '#FFA500'
           }
         }
       }
     };
   </script>
   <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body class="bg-white text-gray-900 dark:bg-anthracite dark:text-gray-100 font-sans">
 
   <!-- Navigation -->
-  <nav class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 bg-opacity-80 backdrop-blur-md z-50">
+  <nav class="fixed top-0 w-full bg-white dark:bg-gray-800 bg-opacity-80 backdrop-blur-md z-50">
     <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
       <div class="text-xl font-bold">Bahri</div>
       <ul class="hidden md:flex space-x-6">
-        <li><a href="#home" class="hover:text-accent1">Home</a></li>
-        <li><a href="#about" class="hover:text-accent1">Über mich</a></li>
-        <li><a href="#projects" class="hover:text-accent1">Projekte</a></li>
-        <li><a href="#contact" class="hover:text-accent1">Kontakt</a></li>
+        <li><a href="#home" class="hover:text-accent2">Home</a></li>
+        <li><a href="#about" class="hover:text-accent2">Über mich</a></li>
+        <li><a href="#certificates" class="hover:text-accent2">Zertifikate</a></li>
+        <li><a href="#projects" class="hover:text-accent2">Projekte</a></li>
+        <li><a href="#sandbox" class="hover:text-accent2">CodeSandbox</a></li>
+        <li><a href="#visualization" class="hover:text-accent2">3D-Visualisierung</a></li>
       </ul>
-      <button id="theme-toggle" class="p-2 rounded focus:outline-none">🌓</button>
+      <div class="flex items-center space-x-2">
+        <button id="lang-de" class="px-2 py-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700">DE</button>
+        <button id="lang-en" class="px-2 py-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700">EN</button>
+        <button id="theme-toggle" class="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700">🌓</button>
+      </div>
       <button id="mobile-menu-btn" class="md:hidden p-2 focus:outline-none">☰</button>
     </div>
-    <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden bg-white dark:bg-gray-800">
       <ul class="flex flex-col space-y-2 p-4">
-        <li><a href="#home" class="hover:text-accent1">Home</a></li>
-        <li><a href="#about" class="hover:text-accent1">Über mich</a></li>
-        <li><a href="#projects" class="hover:text-accent1">Projekte</a></li>
-        <li><a href="#contact" class="hover:text-accent1">Kontakt</a></li>
+        <li><a href="#home" class="hover:text-accent2">Home</a></li>
+        <li><a href="#about" class="hover:text-accent2">Über mich</a></li>
+        <li><a href="#certificates" class="hover:text-accent2">Zertifikate</a></li>
+        <li><a href="#projects" class="hover:text-accent2">Projekte</a></li>
+        <li><a href="#sandbox" class="hover:text-accent2">CodeSandbox</a></li>
+        <li><a href="#visualization" class="hover:text-accent2">3D-Visualisierung</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <header id="home" class="min-h-screen flex items-center justify-center" data-aos="fade-in">
-    <div class="text-center px-4 mt-16">
-      <h1 class="text-5xl font-extrabold mb-4">👋 Hi, ich bin Bahri</h1>
-      <p class="text-xl mb-6">Angehender Fachinformatiker für Anwendungsentwicklung mit einer Leidenschaft für modernen, sauberen Code.</p>
-      <a href="#projects" class="bg-accent1 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition">Meine Projekte</a>
+  <header id="home" class="min-h-screen flex items-center justify-center pt-20" data-aos="fade-in">
+    <div class="text-center px-4">
+      <h1 class="text-5xl font-extrabold mb-4">
+        <span class="lang-de">👋 Hi, ich bin Bahri</span>
+        <span class="lang-en hidden">👋 Hi, I'm Bahri</span>
+      </h1>
+      <p class="text-xl mb-6">
+        <span class="lang-de">Angehender Fachinformatiker für Anwendungsentwicklung mit einer Leidenschaft für modernen, sauberen Code.</span>
+        <span class="lang-en hidden">Aspiring IT specialist in application development, passionate about modern, clean code.</span>
+      </p>
+      <a href="#projects" class="bg-accent2 dark:bg-accent1 text-white px-6 py-3 rounded-lg hover:opacity-90 transition">
+        <span class="lang-de">Meine Projekte</span><span class="lang-en hidden">My Projects</span>
+      </a>
     </div>
   </header>
 
   <!-- About Section -->
   <section id="about" class="max-w-4xl mx-auto py-16 px-4 border-b border-gray-300 dark:border-gray-700" data-aos="fade-up">
-    <h2 class="text-3xl font-semibold mb-4">Über mich</h2>
-    <p class="text-gray-700 dark:text-gray-300 mb-6">Ich studiere Cyber Security Management und strebe eine Karriere als Fachinformatiker für Anwendungsentwicklung an. Meine Stärken liegen in <strong>JavaScript</strong>, <strong>Python</strong> und modernen Frameworks wie <strong>React</strong>.</p>
+    <h2 class="text-3xl font-semibold mb-4">
+      <span class="lang-de">Über mich</span><span class="lang-en hidden">About me</span>
+    </h2>
+    <p class="text-gray-700 dark:text-gray-300 mb-6">
+      <span class="lang-de">Ich studiere Cyber Security Management und strebe eine Karriere als Fachinformatiker für Anwendungsentwicklung an. Meine Stärken liegen in JavaScript, Python und modernen Frameworks wie React.</span>
+      <span class="lang-en hidden">I am studying Cyber Security Management and aiming for a career as an application development specialist. My strengths are JavaScript, Python, and modern frameworks like React.</span>
+    </p>
     <!-- Skills Icons -->
     <div class="flex flex-wrap gap-4 mb-6">
       <img src="icons/javascript.svg" alt="JavaScript" class="w-12 h-12" title="JavaScript">
@@ -73,65 +94,118 @@
       <img src="icons/tailwind.svg" alt="TailwindCSS" class="w-12 h-12" title="TailwindCSS">
       <img src="icons/python.svg" alt="Python" class="w-12 h-12" title="Python">
     </div>
-    <a href="/Bahri_CV.pdf" download class="inline-block bg-accent2 text-white px-4 py-2 rounded hover:bg-green-600 transition">Lebenslauf herunterladen</a>
+    <a href="/Bahri_CV.pdf" download class="inline-block bg-accent2 text-white px-4 py-2 rounded hover:opacity-90 transition">
+      <span class="lang-de">Lebenslauf herunterladen</span><span class="lang-en hidden">Download CV</span>
+    </a>
+  </section>
+
+  <!-- Certificates Section -->
+  <section id="certificates" class="max-w-4xl mx-auto py-16 px-4 border-b border-gray-300 dark:border-gray-700" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold mb-6">
+      <span class="lang-de">Zertifikate</span><span class="lang-en hidden">Certificates</span>
+    </h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <!-- Zertifikat Template -->
+      <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md hover:shadow-lg transition">
+        <img src="https://via.placeholder.com/150" alt="Zertifikat" class="w-full h-32 object-contain mb-2">
+        <p class="text-center text-sm">
+          <span class="lang-de">Zertifikat-Name</span><span class="lang-en hidden">Certificate Name</span>
+        </p>
+      </div>
+      <!-- Mehr Zertifikate hier -->
+    </div>
   </section>
 
   <!-- Projects Section -->
   <section id="projects" class="max-w-6xl mx-auto py-16 px-4 border-b border-gray-300 dark:border-gray-700" data-aos="fade-up">
-    <h2 class="text-3xl font-semibold mb-6">🛠 Projekte</h2>
+    <h2 class="text-3xl font-semibold mb-6">
+      <span class="lang-de">🛠 Projekte</span><span class="lang-en hidden">🛠 Projects</span>
+    </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-      <!-- Projekt Template Card -->
+      <!-- Projekt Card Template -->
       <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition" data-aos="zoom-in">
         <img src="https://via.placeholder.com/600x400" alt="Screenshot Projekt" class="w-full h-40 object-cover">
         <div class="p-6">
-          <h3 class="text-2xl font-bold mb-2">Projekt-Titel</h3>
-          <p class="text-gray-600 dark:text-gray-400 mb-4">Kurze Beschreibung des Projekts in 1-2 Sätzen.</p>
+          <h3 class="text-2xl font-bold mb-2">
+            <span class="lang-de">Projekt-Titel</span><span class="lang-en hidden">Project Title</span>
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">
+            <span class="lang-de">Kurze Beschreibung des Projekts in 1-2 Sätzen.</span><span class="lang-en hidden">Short description of the project in 1-2 sentences.</span>
+          </p>
           <!-- Tech Badges -->
           <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs bg-accent1 px-2 py-1 rounded-full">React</span>
-            <span class="text-xs bg-accent2 px-2 py-1 rounded-full">Node.js</span>
-            <span class="text-xs bg-accent3 px-2 py-1 rounded-full">TailwindCSS</span>
+            <span class="text-xs bg-accent1 text-black px-2 py-1 rounded-full">React</span>
+            <span class="text-xs bg-accent3 text-black px-2 py-1 rounded-full">Node.js</span>
+            <span class="text-xs bg-accent2 text-black px-2 py-1 rounded-full">TailwindCSS</span>
           </div>
-          <a href="#" class="inline-block bg-accent1 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">Live Demo</a>
-          <a href="#" class="inline-block ml-4 text-accent1 hover:underline">Code</a>
+          <!-- Download Count -->
+          <div class="text-xs text-gray-500 dark:text-gray-400 mb-4">
+            <span class="lang-de">Downloads:</span><span class="lang-en hidden">Downloads:</span> <span class="download-count">-</span>
+          </div>
+          <a href="#" class="inline-block bg-accent2 dark:bg-accent1 text-white px-4 py-2 rounded-lg hover:opacity-90 transition mr-2">
+            <span class="lang-de">Live Demo</span><span class="lang-en hidden">Live Demo</span>
+          </a>
+          <a href="#" class="inline-block text-accent2 dark:text-accent1 hover:underline">
+            <span class="lang-de">Code</span><span class="lang-en hidden">Code</span>
+          </a>
         </div>
       </div>
-
-      <!-- Duplikiere die obige Projekt-Card für weitere Projekte -->
-
+      <!-- Weitere Projekt-Cards duplizieren -->
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="bg-white dark:bg-gray-800 py-16 px-4" data-aos="fade-up">
-    <h2 class="text-3xl font-semibold text-center mb-6">📫 Kontakt</h2>
-    <form action="https://formspree.io/f/{DEINE_ID}" method="POST" class="max-w-xl mx-auto grid grid-cols-1 gap-4">
-      <input type="text" name="name" placeholder="Name" required class="p-3 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none">
-      <input type="email" name="email" placeholder="E-Mail" required class="p-3 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none">
-      <textarea name="message" rows="5" placeholder="Nachricht" required class="p-3 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none"></textarea>
-      <button type="submit" class="bg-accent1 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition">Absenden</button>
-    </form>
+  <!-- CodeSandbox Section -->
+  <section id="sandbox" class="max-w-6xl mx-auto py-16 px-4 border-b border-gray-300 dark:border-gray-700" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold mb-6">
+      <span class="lang-de">CodeSandbox</span><span class="lang-en hidden">CodeSandbox</span>
+    </h2>
+    <div class="aspect-[16/9]">
+      <!-- Embed dein CodeSandbox-Projekt -->
+      <iframe src="YOUR_CODESANDBOX_EMBED_URL" frameborder="0" class="w-full h-full"></iframe>
+    </div>
+  </section>
+
+  <!-- 3D Visualization Section -->
+  <section id="visualization" class="max-w-6xl mx-auto py-16 px-4" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold mb-6">
+      <span class="lang-de">3D-Visualisierung</span><span class="lang-en hidden">3D Visualization</span>
+    </h2>
+    <canvas id="threejs-canvas" class="w-full h-64 rounded-lg shadow-lg"></canvas>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-accent1 text-white text-center p-6" data-aos="fade-in">
+  <footer class="bg-accent2 text-white text-center p-6" data-aos="fade-in">
     &copy; 2025 Bahri | <a href="https://github.com/deinusername" class="underline">GitHub</a>
   </footer>
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
+    // Initialize AOS
     AOS.init({ duration: 800, once: true });
-    // Dark/Light Mode Toggle
-    const btn = document.getElementById('theme-toggle');
-    btn.addEventListener('click', () => {
-      document.documentElement.classList.toggle('dark');
+    // Theme detection
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    // Theme toggle
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      if (document.documentElement.classList.contains('dark')) {
+        localStorage.theme = 'light';
+        document.documentElement.classList.remove('dark');
+      } else {
+        localStorage.theme = 'dark';
+        document.documentElement.classList.add('dark');
+      }
     });
-    // Mobile Menu Toggle
-    const menuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-  </script>
-</body>
-</html>
+    // Language toggle
+    function setLanguage(lang) {
+      document.documentElement.setAttribute('lang', lang);
+      document.querySelectorAll('.lang-de').forEach(el => el.classList.toggle('hidden', lang !== 'de'));
+      document.querySelectorAll('.lang-en').forEach(el => el.classList.toggle('hidden', lang !== 'en'));
+    }
+    document.getElementById('lang-de').addEventListener('click', () => setLanguage('de'));
+    document.getElementById('lang-en').addEventListener('click', () => setLanguage('en'));
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
