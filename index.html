@@ -25,13 +25,14 @@
     };
   </script>
   <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body class="bg-white text-gray-900 dark:bg-anthracite dark:text-gray-100 font-sans">
 
   <!-- Navigation -->
-  <nav class="fixed top-0 w-full bg-white dark:bg-gray-800 bg-opacity-80 backdrop-blur-md z-50">
-    <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+  <nav class="fixed top-0 w-full bg-white dark:bg-gray-800 bg-opacity-80 backdrop-blur-md z-50 p-4">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
       <div class="text-xl font-bold">Bahri</div>
       <ul class="hidden md:flex space-x-6">
         <li><a href="#home" class="hover:text-accent2">Home</a></li>
@@ -48,8 +49,8 @@
       </div>
       <button id="mobile-menu-btn" class="md:hidden p-2 focus:outline-none">☰</button>
     </div>
-    <div id="mobile-menu" class="hidden bg-white dark:bg-gray-800">
-      <ul class="flex flex-col space-y-2 p-4">
+    <div id="mobile-menu" class="hidden bg-white dark:bg-gray-800 p-4">
+      <ul class="flex flex-col space-y-2">
         <li><a href="#home" class="hover:text-accent2">Home</a></li>
         <li><a href="#about" class="hover:text-accent2">Über mich</a></li>
         <li><a href="#certificates" class="hover:text-accent2">Zertifikate</a></li>
@@ -68,7 +69,7 @@
         <span class="lang-en hidden">👋 Hi, I'm Bahri</span>
       </h1>
       <p class="text-xl mb-6">
-        <span class="lang-de">Angehender Fachinformatiker für Anwendungsentwicklung mit einer Leidenschaft für modernen, sauberen Code.</span>
+        <span class="lang-de">Angehender Fachinformatiker für Anwendungsentwicklung mit Leidenschaft für modernen, sauberen Code.</span>
         <span class="lang-en hidden">Aspiring IT specialist in application development, passionate about modern, clean code.</span>
       </p>
       <a href="#projects" class="bg-accent2 dark:bg-accent1 text-white px-6 py-3 rounded-lg hover:opacity-90 transition">
@@ -86,7 +87,6 @@
       <span class="lang-de">Ich studiere Cyber Security Management und strebe eine Karriere als Fachinformatiker für Anwendungsentwicklung an. Meine Stärken liegen in JavaScript, Python und modernen Frameworks wie React.</span>
       <span class="lang-en hidden">I am studying Cyber Security Management and aiming for a career as an application development specialist. My strengths are JavaScript, Python, and modern frameworks like React.</span>
     </p>
-    <!-- Skills Icons -->
     <div class="flex flex-wrap gap-4 mb-6">
       <img src="icons/javascript.svg" alt="JavaScript" class="w-12 h-12" title="JavaScript">
       <img src="icons/react.svg" alt="React" class="w-12 h-12" title="React">
@@ -94,7 +94,7 @@
       <img src="icons/tailwind.svg" alt="TailwindCSS" class="w-12 h-12" title="TailwindCSS">
       <img src="icons/python.svg" alt="Python" class="w-12 h-12" title="Python">
     </div>
-    <a href="/Bahri_CV.pdf" download class="inline-block bg-accent2 text-white px-4 py-2 rounded hover:opacity-90 transition">
+    <a href="assets/Bahri_CV.pdf" download class="inline-block bg-accent1 text-white px-4 py-2 rounded hover:opacity-90 transition">
       <span class="lang-de">Lebenslauf herunterladen</span><span class="lang-en hidden">Download CV</span>
     </a>
   </section>
@@ -105,14 +105,13 @@
       <span class="lang-de">Zertifikate</span><span class="lang-en hidden">Certificates</span>
     </h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-      <!-- Zertifikat Template -->
       <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md hover:shadow-lg transition">
-        <img src="https://via.placeholder.com/150" alt="Zertifikat" class="w-full h-32 object-contain mb-2">
+        <img src="certificates/zertifikat1.png" alt="Zertifikat 1" class="w-full h-32 object-contain mb-2">
         <p class="text-center text-sm">
           <span class="lang-de">Zertifikat-Name</span><span class="lang-en hidden">Certificate Name</span>
         </p>
       </div>
-      <!-- Mehr Zertifikate hier -->
+      <!-- Weitere Zertifikate -->
     </div>
   </section>
 
@@ -122,25 +121,22 @@
       <span class="lang-de">🛠 Projekte</span><span class="lang-en hidden">🛠 Projects</span>
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Projekt Card Template -->
       <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition" data-aos="zoom-in">
-        <img src="https://via.placeholder.com/600x400" alt="Screenshot Projekt" class="w-full h-40 object-cover">
+        <img src="images/projekt1.png" alt="Projekt 1" class="w-full h-40 object-cover">
         <div class="p-6">
           <h3 class="text-2xl font-bold mb-2">
             <span class="lang-de">Projekt-Titel</span><span class="lang-en hidden">Project Title</span>
           </h3>
           <p class="text-gray-600 dark:text-gray-400 mb-4">
-            <span class="lang-de">Kurze Beschreibung des Projekts in 1-2 Sätzen.</span><span class="lang-en hidden">Short description of the project in 1-2 sentences.</span>
+            <span class="lang-de">Kurze Beschreibung des Projekts.</span><span class="lang-en hidden">Short project description.</span>
           </p>
-          <!-- Tech Badges -->
           <div class="flex flex-wrap gap-2 mb-4">
             <span class="text-xs bg-accent1 text-black px-2 py-1 rounded-full">React</span>
-            <span class="text-xs bg-accent3 text-black px-2 py-1 rounded-full">Node.js</span>
-            <span class="text-xs bg-accent2 text-black px-2 py-1 rounded-full">TailwindCSS</span>
+            <span class="text-xs bg-accent2 text-black px-2 py-1 rounded-full">Node.js</span>
+            <span class="text-xs bg-accent3 text-black px-2 py-1 rounded-full">TailwindCSS</span>
           </div>
-          <!-- Download Count -->
           <div class="text-xs text-gray-500 dark:text-gray-400 mb-4">
-            <span class="lang-de">Downloads:</span><span class="lang-en hidden">Downloads:</span> <span class="download-count">-</span>
+            <span class="lang-de">Downloads:</span><span class="lang-en hidden">Downloads:</span> <span class="download-count">123</span>
           </div>
           <a href="#" class="inline-block bg-accent2 dark:bg-accent1 text-white px-4 py-2 rounded-lg hover:opacity-90 transition mr-2">
             <span class="lang-de">Live Demo</span><span class="lang-en hidden">Live Demo</span>
@@ -160,8 +156,7 @@
       <span class="lang-de">CodeSandbox</span><span class="lang-en hidden">CodeSandbox</span>
     </h2>
     <div class="aspect-[16/9]">
-      <!-- Embed dein CodeSandbox-Projekt -->
-      <iframe src="YOUR_CODESANDBOX_EMBED_URL" frameborder="0" class="w-full h-full"></iframe>
+      <iframe src="YOUR_CODESANDBOX_EMBED_URL" frameborder="0" class="w-full h-full rounded-lg shadow-lg"></iframe>
     </div>
   </section>
 
@@ -178,34 +173,50 @@
     &copy; 2025 Bahri | <a href="https://github.com/deinusername" class="underline">GitHub</a>
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <!-- Initialize AOS, Toggles & Three.js -->
   <script>
-    // Initialize AOS
-    AOS.init({ duration: 800, once: true });
-    // Theme detection
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-    // Theme toggle
-    document.getElementById('theme-toggle').addEventListener('click', () => {
-      if (document.documentElement.classList.contains('dark')) {
-        localStorage.theme = 'light';
-        document.documentElement.classList.remove('dark');
-      } else {
-        localStorage.theme = 'dark';
+    document.addEventListener('DOMContentLoaded', () => {
+      AOS.init({ duration: 800, once: true });
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark');
       }
+      document.getElementById('theme-toggle').addEventListener('click', () => {
+        if (document.documentElement.classList.contains('dark')) {
+          localStorage.theme = 'light'; document.documentElement.classList.remove('dark');
+        } else {
+          localStorage.theme = 'dark'; document.documentElement.classList.add('dark');
+        }
+      });
+      const setLanguage = lang => {
+        document.documentElement.setAttribute('lang', lang);
+        document.querySelectorAll('.lang-de').forEach(el => el.classList.toggle('hidden', lang!=='de'));
+        document.querySelectorAll('.lang-en').forEach(el => el.classList.toggle('hidden', lang!=='en'));
+      };
+      document.getElementById('lang-de').addEventListener('click', () => setLanguage('de'));
+      document.getElementById('lang-en').addEventListener('click', () => setLanguage('en'));
+      document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+      });
+
+      // Three.js simple demo
+      const canvas = document.getElementById('threejs-canvas');
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth/canvas.clientHeight, 0.1, 1000);
+      const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+      renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+      camera.position.z = 3;
+      const geometry = new THREE.BoxGeometry();
+      const material = new THREE.MeshNormalMaterial();
+      const cube = new THREE.Mesh(geometry, material);
+      scene.add(cube);
+      function animate() {
+        requestAnimationFrame(animate);
+        cube.rotation.x += 0.01;
+        cube.rotation.y += 0.01;
+        renderer.render(scene, camera);
+      }
+      animate();
     });
-    // Language toggle
-    function setLanguage(lang) {
-      document.documentElement.setAttribute('lang', lang);
-      document.querySelectorAll('.lang-de').forEach(el => el.classList.toggle('hidden', lang !== 'de'));
-      document.querySelectorAll('.lang-en').forEach(el => el.classList.toggle('hidden', lang !== 'en'));
-    }
-    document.getElementById('lang-de').addEventListener('click', () => setLanguage('de'));
-    document.getElementById('lang-en').addEventListener('click', () => setLanguage('en'));
-    // Mobile menu toggle
-    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+  </script>
+</body>
+</html>
